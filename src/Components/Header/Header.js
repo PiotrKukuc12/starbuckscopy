@@ -1,14 +1,29 @@
+import {
+  Button,
+  Divider,
+  Box,
+  List,
+  ListItem,
+  ListItemText,
+  SwipeableDrawer,
+} from '@material-ui/core';
+import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
 import React from 'react';
-import { ButtonHeader, HeadContainer, Logo, TextHeader } from './Header.styles';
+import { useState } from 'react';
+import { ButtonHeader, HeadContainer, TextHeader } from './Header.styles';
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <HeadContainer>
-    {/* <Logo title="foto" src="https://img.icons8.com/color/48/000000/starbucks.png" alt="foto"></Logo> */}
+      {/* <Logo title="foto" src="https://img.icons8.com/color/48/000000/starbucks.png" alt="foto"></Logo> */}
       <div className="header">
         <div className="nav-bar">
           <div className="header-logo">
-            <a href='#'><img src="https://img.icons8.com/color/62/000000/starbucks.png"/></a>
+            <a href="#">
+              <img src="https://img.icons8.com/color/62/000000/starbucks.png" />
+            </a>
           </div>
           <div className="columns">
             <div className="left-col">
@@ -48,6 +63,43 @@ const Header = () => {
                   </ButtonHeader>
                 </li>
               </ul>
+            </div>
+            <div className="mobile-drawer">
+              <Button onClick={() => setOpen(true)}>
+                <FormatAlignJustifyIcon />
+              </Button>
+              <SwipeableDrawer
+                anchor="right"
+                open={open}
+                onClose={() => setOpen(false)}
+                // onOpen{() => ()}
+              >
+                <div>
+                  <List>
+                    <ListItem>
+                      <ListItemText primary={'Menu'}> </ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText primary={'Rewards'}> </ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText primary={'Gift Cards'}> </ListItemText>
+                    </ListItem>
+                  </List>
+                  <Divider />
+                  <List>
+                    <ListItem>
+                      <Button>Join now</Button>
+                    </ListItem>
+                    <ListItem>
+                      <Button>Sign in</Button>
+                    </ListItem>
+                    <ListItem>
+                      <Button>Find a store </Button>
+                    </ListItem>
+                  </List>
+                </div>
+              </SwipeableDrawer>
             </div>
           </div>
         </div>

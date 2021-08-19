@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+const media = {
+  mobile: '@media(max-width: 800px)'
+}
+
 export const HeadContainer = styled.div`
   background-color: white;
   display: flex;
@@ -32,6 +36,7 @@ export const HeadContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
 
   .left-col ul {
@@ -54,6 +59,11 @@ export const HeadContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    ${media.mobile}{
+      display: none;
+    }
+
   }
 
   .right-col ul {
@@ -65,6 +75,25 @@ export const HeadContainer = styled.div`
     list-style: none;
     margin-right: 40px;
   }
+  
+  .mobile-drawer{
+    display:none;
+  }
+
+  ${media.mobile}{
+    .left-col{
+      display: none;
+    }
+
+    .columns{
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .mobile-drawer{
+      display: block;
+      margin-right: 40px;
+    }
 
 `;
 
