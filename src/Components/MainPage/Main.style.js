@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const media = {
-    mobile: '@media(max-width: 1050px)'
+    mobile: '@media(max-width: 1050px)',
+    telephone: '@media(max-width: 767px)'
   }
 
 
@@ -306,6 +307,16 @@ text-align: center;
         .main-footer .second-p,
         .main-footer .first-p{
             margin: 30px;
+        }
+
+    }
+
+    ${media.telephone}{
+        p {
+            display: none;
+        }
+        .learn-more .text p{
+            display: block;
         }
     }
 `

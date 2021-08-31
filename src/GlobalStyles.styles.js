@@ -1,12 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-    @import url(//db.onlinewebfonts.com/c/d7e8a95865396cddca89b00080d2cba6?family=SoDo+Sans+SemiBold);
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
     body{
-        font-family: 'SoDo Sans SemiBold';
+        font-family: 'Roboto', sans-serif;
         margin: 0;
         padding: 0;
+        overflow-x: hidden;
     }
 `
 

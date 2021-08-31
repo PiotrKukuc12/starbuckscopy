@@ -122,6 +122,7 @@ export const ButtonHeader = styled.a`
   border-radius: 30px;
   padding: 10px;
   border: solid 1px black;
+  margin-bottom: 5px;
 
 
   &:hover{

@@ -1,7 +1,6 @@
 import {
   Button,
   Divider,
-  Box,
   List,
   ListItem,
   ListItemText,
@@ -11,13 +10,13 @@ import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
 import React from 'react';
 import { useState } from 'react';
 import { ButtonHeader, HeadContainer, TextHeader } from './Header.styles';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <HeadContainer>
-      {/* <Logo title="foto" src="https://img.icons8.com/color/48/000000/starbucks.png" alt="foto"></Logo> */}
       <div className="header">
         <div className="nav-bar">
           <div className="header-logo">
@@ -27,9 +26,10 @@ const Header = () => {
           </div>
           <div className="columns">
             <div className="left-col">
+            <Router >
               <ul>
                 <li>
-                  <TextHeader href="#">Menu</TextHeader>
+                  <TextHeader href='#'>Menu</TextHeader>
                 </li>
                 <li>
                   <TextHeader href="#">Rewards</TextHeader>
@@ -38,6 +38,8 @@ const Header = () => {
                   <TextHeader href="#">Gift Cards</TextHeader>
                 </li>
               </ul>
+              <Route path="/"/>
+            </Router>
             </div>
             <div className="right-col">
               <ul>
